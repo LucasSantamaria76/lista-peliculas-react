@@ -30,7 +30,11 @@ const Listado = ({ addOrRemoveFav }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    e.target.name === 'next' ? setNumPage(numPage + 1) : numPage > 1 ? setNumPage(numPage - 1) : setNumPage(numPage);
+    e.target.name === 'next'
+      ? setNumPage(numPage + 1)
+      : numPage > 1
+      ? setNumPage(numPage - 1)
+      : setNumPage(numPage);
   };
 
   return (
@@ -47,13 +51,21 @@ const Listado = ({ addOrRemoveFav }) => {
             </div>
             <div className='row'>
               <div className='col-6 offset-4'>
-                <button type='button' className='btn btn-primary' name='prev' onClick={handleClick}>
+                <button
+                  type='button'
+                  className='btn btn-secondary '
+                  name='prev'
+                  onClick={handleClick}>
                   Página anterior
                 </button>
-                <button type='button' className='btn btn-primary disabled'>
+                <button type='button' className='btn btn-secondary rounded-circle mx-1  disabled'>
                   {numPage}
                 </button>
-                <button type='button' className='btn btn-primary' name='next' onClick={handleClick}>
+                <button
+                  type='button'
+                  className='btn btn-secondary '
+                  name='next'
+                  onClick={handleClick}>
                   Página siguiente
                 </button>
               </div>
