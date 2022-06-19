@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ movie, addOrRemoveFav }) => {
   const { id, title, poster_path, release_date } = movie;
-  console.log('movie', movie);
 
   const favMovies = localStorage.getItem('favMovies')
     ? JSON.parse(localStorage.getItem('favMovies'))

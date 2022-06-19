@@ -7,13 +7,15 @@ import Listado from './components/Listado';
 import Login from './components/Login';
 import Resultados from './components/Resultados';
 import Favoritos from './components/Favoritos';
-import './css/bootstrap.min.css';
+import './css/bootstrap.css';
 import './css/app.css';
 
 const App = () => {
   const [favoritos, setFavoritos] = useState([]);
 
-  let favMovies = localStorage.getItem('favMovies') ? JSON.parse(localStorage.getItem('favMovies')) : [];
+  let favMovies = localStorage.getItem('favMovies')
+    ? JSON.parse(localStorage.getItem('favMovies'))
+    : [];
 
   useEffect(() => {
     setFavoritos(favMovies);
@@ -45,7 +47,10 @@ const App = () => {
           <Route path='/listado' element={<Listado addOrRemoveFav={addOrRemoveFav} />} />
           <Route path='/detalle' element={<Detalle />} />
           <Route path='/resultados' element={<Resultados addOrRemoveFav={addOrRemoveFav} />} />
-          <Route path='/favoritos' element={<Favoritos addOrRemoveFav={addOrRemoveFav} favoritos={favoritos} />} />
+          <Route
+            path='/favoritos'
+            element={<Favoritos addOrRemoveFav={addOrRemoveFav} favoritos={favoritos} />}
+          />
         </Routes>
       </div>
       <Footer />

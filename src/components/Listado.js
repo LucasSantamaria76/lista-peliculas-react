@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Card from './Card';
 import Swal from 'sweetalert2';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Listado = ({ addOrRemoveFav }) => {
   const [movieList, setMovieList] = useState([]);
@@ -22,6 +23,7 @@ const Listado = ({ addOrRemoveFav }) => {
           confirmButtonText: 'Aceptar',
         })
       );
+    scroll.scrollToTop({ duration: 0, delay: 0, smooth: false });
   };
 
   useEffect(() => {

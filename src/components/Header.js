@@ -1,12 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
 import Buscador from './Buscador';
+import { useNavigate } from 'react-router-dom';
 
 const menu = ['Listado', 'Favoritos'];
 
 const Header = ({ favoritos }) => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div class='toolbar'></div>
+      <div className='toolbar'></div>
       <header>
         <nav className='navbar navbar-expand navbar-dark bg-dark'>
           <div className='container-fluid'>
@@ -27,7 +30,10 @@ const Header = ({ favoritos }) => {
               </ul>
             </div>
             {favoritos.length > 0 && (
-              <button type='button' className='btnFav btnNav'>
+              <button
+                type='button'
+                className='btnFav btnNav'
+                onClick={() => navigate('/favoritos')}>
                 ❤️
                 <span className='position-absolute start-100 translate-middle badge rounded-circle bg-info'>
                   {favoritos.length}
